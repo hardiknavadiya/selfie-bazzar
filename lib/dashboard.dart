@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/rendering.dart';
+import 'package:selfie_bazaar/members.dart';
 import 'package:selfie_bazaar/profile.dart';
 
 class slider extends StatelessWidget {
@@ -107,9 +108,14 @@ class dashboardstate extends State<dashboard> {
                         builder: (context)=>profile()
                       ));
                     }),
-                    slider(Icon(Icons.notifications), "Notification", () {}),
-                    slider(Icon(Icons.settings), "Settings", () {}),
-                    slider(Icon(Icons.settings), "Settings", () {}),
+                    slider(Icon(Icons.settings), "My Order", () {}),
+                    slider(Icon(Icons.supervisor_account), "Members", () {
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context)=>members()
+                      ));
+                    }),
+                    slider(Icon(Icons.lock_open), "Log Out", () {}),
+
                   ],
                 ),
               )

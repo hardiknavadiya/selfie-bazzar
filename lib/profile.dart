@@ -19,7 +19,7 @@ class profilestate extends State<profile> {
         padding: const EdgeInsets.all(30.0),
         child: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
               Container(
                   width: 150.0,
