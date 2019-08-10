@@ -4,6 +4,8 @@ import 'package:flutter/rendering.dart';
 import 'package:selfie_bazaar/members.dart';
 import 'package:selfie_bazaar/profile.dart';
 
+import 'order.dart';
+
 class slider extends StatelessWidget {
   Icon icon1;
   String text;
@@ -107,8 +109,12 @@ class dashboardstate extends State<dashboard> {
                       Navigator.push(context, MaterialPageRoute(
                         builder: (context)=>profile()
                       ));
+                     }),
+                    slider(Icon(Icons.settings), "My Order", () {
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context)=>order()
+                      ));
                     }),
-                    slider(Icon(Icons.settings), "My Order", () {}),
                     slider(Icon(Icons.supervisor_account), "Members", () {
                       Navigator.push(context, MaterialPageRoute(
                         builder: (context)=>members()
