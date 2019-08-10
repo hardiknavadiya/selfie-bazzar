@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/rendering.dart';
-import 'package:selfie_bazaar/members.dart';
+import 'package:selfie_bazaar/membership.dart';
 import 'package:selfie_bazaar/profile.dart';
-
+import 'mymember.dart';
 import 'order.dart';
 
 class slider extends StatelessWidget {
@@ -42,7 +42,6 @@ class slider extends StatelessWidget {
         ),
       ),
     );
-    ;
   }
 }
 
@@ -74,7 +73,7 @@ class dashboardstate extends State<dashboard> {
     );
 
     return WillPopScope(
-      onWillPop: (){},
+      onWillPop: () {},
       child: Scaffold(
         appBar: AppBar(
           title: Text("Selfie Bazaar"),
@@ -100,28 +99,29 @@ class dashboardstate extends State<dashboard> {
                     ),
                   ),
                 ),
-                decoration: BoxDecoration(color: Theme.of(context).primaryColor),
+                decoration:
+                    BoxDecoration(color: Theme.of(context).primaryColor),
               )),
               Container(
                 child: Column(
                   children: <Widget>[
                     slider(Icon(Icons.person), "Profile", () {
-                      Navigator.push(context, MaterialPageRoute(
-                        builder: (context)=>profile()
-                      ));
-                     }),
-                    slider(Icon(Icons.settings), "My Order", () {
-                      Navigator.push(context, MaterialPageRoute(
-                        builder: (context)=>order()
-                      ));
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => profile()));
                     }),
-                    slider(Icon(Icons.supervisor_account), "Members", () {
-                      Navigator.push(context, MaterialPageRoute(
-                        builder: (context)=>members()
-                      ));
+                    slider(Icon(Icons.settings), "My Order", () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => order()));
+                    }),
+                    slider(Icon(Icons.supervisor_account), "Membership", () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => membership()));
+                    }),
+                    slider(Icon(Icons.supervisor_account), "My Member", () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => mymember()));
                     }),
                     slider(Icon(Icons.lock_open), "Log Out", () {}),
-
                   ],
                 ),
               )
@@ -204,12 +204,13 @@ class dashboardstate extends State<dashboard> {
             Container(
               height: 2,
               decoration: BoxDecoration(
-                      border: Border.all(color: Colors.black
-                    ),),
+                border: Border.all(color: Colors.black),
+              ),
             ),
             Container(
               child: Padding(
-                padding: const EdgeInsets.only(top: 10.0,left: 5,right: 5,bottom: 15),
+                padding: const EdgeInsets.only(
+                    top: 10.0, left: 5, right: 5, bottom: 15),
                 child: Column(
                   children: <Widget>[
                     Row(
@@ -315,7 +316,9 @@ class dashboardstate extends State<dashboard> {
                         ),
                       ],
                     ),
-                    Container(height: 10,),
+                    Container(
+                      height: 10,
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: <Widget>[
@@ -423,7 +426,6 @@ class dashboardstate extends State<dashboard> {
                 ),
               ),
             ),
-           
             Padding(
               padding: const EdgeInsets.only(top: 15.0),
               child: Container(
@@ -431,20 +433,19 @@ class dashboardstate extends State<dashboard> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top:20.0),
+              padding: const EdgeInsets.only(top: 20.0),
               child: Container(
                 child: Table(
                   border: TableBorder.all(width: 1),
-                   children: [
-              _buildTableheading("User Mobile, User Name, Is Active, Date"),       
-            _buildTableRow("6352497664, hardik, Active, 27/02/2018"),
-            _buildTableRow("6352497664, hardik, Active, 27/02/2018"),
-            _buildTableRow("6352497664, hardik, Active, 27/02/2018"),
-            _buildTableRow("6352497664, hardik, Active, 27/02/2018"),
-            _buildTableRow("6352497664, hardik, Active, 27/02/2018"),
-           
-          
-          ],
+                  children: [
+                    _buildTableheading(
+                        "User Mobile, User Name, Is Active, Date"),
+                    _buildTableRow("6352497664, hardik, Active, 27/02/2018"),
+                    _buildTableRow("6352497664, hardik, Active, 27/02/2018"),
+                    _buildTableRow("6352497664, hardik, Active, 27/02/2018"),
+                    _buildTableRow("6352497664, hardik, Active, 27/02/2018"),
+                    _buildTableRow("6352497664, hardik, Active, 27/02/2018"),
+                  ],
                 ),
               ),
             )
@@ -454,26 +455,29 @@ class dashboardstate extends State<dashboard> {
     );
   }
 }
+
 TableRow _buildTableRow(String listOfNames) {
-    return TableRow(
-      children: listOfNames.split(',').map((name) {
-        return Container(
-          alignment: Alignment.center,
-          child: Text(name, style: TextStyle(fontSize: 15.0)),
-          padding: EdgeInsets.all(8.0),
-        );
-      }).toList(),
-    );
-  }
-  TableRow _buildTableheading(String listOfNames) {
-    return TableRow(
-      children: listOfNames.split(',').map((name) {
-        return Container(
-          color: Colors.blue[700],
-          alignment: Alignment.center,
-          child: Text(name, style: TextStyle(fontSize: 15.0,fontWeight: FontWeight.bold)),
-          padding: EdgeInsets.all(8.0),
-        );
-      }).toList(),
-    );
-  }
+  return TableRow(
+    children: listOfNames.split(',').map((name) {
+      return Container(
+        alignment: Alignment.center,
+        child: Text(name, style: TextStyle(fontSize: 15.0)),
+        padding: EdgeInsets.all(8.0),
+      );
+    }).toList(),
+  );
+}
+
+TableRow _buildTableheading(String listOfNames) {
+  return TableRow(
+    children: listOfNames.split(',').map((name) {
+      return Container(
+        color: Colors.blue[700],
+        alignment: Alignment.center,
+        child: Text(name,
+            style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold)),
+        padding: EdgeInsets.all(8.0),
+      );
+    }).toList(),
+  );
+}
