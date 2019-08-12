@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/rendering.dart';
+import 'package:selfie_bazaar/balancewallet.dart';
+import 'package:selfie_bazaar/mainwallet.dart';
 import 'package:selfie_bazaar/membership.dart';
 import 'package:selfie_bazaar/profile.dart';
+import 'package:selfie_bazaar/showwallet.dart';
 import 'mymember.dart';
 import 'order.dart';
 
@@ -244,17 +247,19 @@ class dashboardstate extends State<dashboard> {
                                 ),
                                 Padding(
                                   padding:
-                                      const EdgeInsets.only(top: 0.0, left: 30),
+                                      const EdgeInsets.only(top: 0.0, left: 15),
                                   child: RaisedButton(
                                     elevation: 0.9,
                                     onPressed: () {
-                                      print('Login Pressed');
+                                      Navigator.push(context, MaterialPageRoute(
+                                        builder: (context)=> balancew(),
+                                      ));
                                     },
                                     color: Colors.blue[700],
                                     shape: new RoundedRectangleBorder(
                                         borderRadius:
                                             new BorderRadius.circular(10.0)),
-                                    child: new Text('Main  Wallet',
+                                    child: new Text('Purchase Wallet',
                                         style: new TextStyle(
                                             color: Colors.white,
                                             fontSize: 16.0,
@@ -293,17 +298,17 @@ class dashboardstate extends State<dashboard> {
                                 ),
                                 Padding(
                                   padding:
-                                      const EdgeInsets.only(top: 0.0, left: 30),
+                                      const EdgeInsets.only(top: 0.0, left: 32),
                                   child: RaisedButton(
                                     elevation: 0.9,
                                     onPressed: () {
-                                      print('Login Pressed');
+                                      Navigator.push(context, MaterialPageRoute(builder: (context)=> mainwallet()));
                                     },
                                     color: Colors.blue[700],
                                     shape: new RoundedRectangleBorder(
                                         borderRadius:
                                             new BorderRadius.circular(10.0)),
-                                    child: new Text('Main  Wallet',
+                                    child: new Text('Main Wallet',
                                         style: new TextStyle(
                                             color: Colors.white,
                                             fontSize: 16.0,
@@ -350,17 +355,19 @@ class dashboardstate extends State<dashboard> {
                                 ),
                                 Padding(
                                   padding:
-                                      const EdgeInsets.only(top: 0.0, left: 30),
+                                      const EdgeInsets.only(top: 0.0, left: 29),
                                   child: RaisedButton(
                                     elevation: 0.9,
                                     onPressed: () {
-                                      print('Login Pressed');
+                                      Navigator.push(context, MaterialPageRoute(
+                                        builder: (context)=>showwallet()
+                                      ));
                                     },
                                     color: Colors.blue[700],
                                     shape: new RoundedRectangleBorder(
                                         borderRadius:
                                             new BorderRadius.circular(10.0)),
-                                    child: new Text('Main  Wallet',
+                                    child: new Text('Show Wallet',
                                         style: new TextStyle(
                                             color: Colors.white,
                                             fontSize: 16.0,
@@ -409,7 +416,7 @@ class dashboardstate extends State<dashboard> {
                                     shape: new RoundedRectangleBorder(
                                         borderRadius:
                                             new BorderRadius.circular(10.0)),
-                                    child: new Text('Main  Wallet',
+                                    child: new Text('Current Level',
                                         style: new TextStyle(
                                             color: Colors.white,
                                             fontSize: 16.0,

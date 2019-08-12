@@ -1,5 +1,7 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:selfie_bazaar/login.dart';
+import 'package:image_picker/image_picker.dart';
 
 class membership extends StatefulWidget {
   @override
@@ -9,6 +11,14 @@ class membership extends StatefulWidget {
 }
 
 class memebershipstate extends State<membership> {
+    File _image;
+  Future getimagefromcamera() async {
+    var image = await ImagePicker.pickImage(source: ImageSource.camera);
+
+    setState(() {
+      _image = image;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,19 +29,38 @@ class memebershipstate extends State<membership> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Container(
-              width: 140.0,
-              height: 140.0,
-              decoration: new BoxDecoration(
-                  shape: BoxShape.circle,
-                  image: new DecorationImage(
-                      fit: BoxFit.fill,
-                      image: new NetworkImage(
-                          "https://i.imgur.com/VP08clu.jpg")))),
-          FlatButton(
-            child: Text("Edit"),
-            onPressed: () {},
-          ),
+                  CircleAvatar(
+                radius: 70,
+                 child: ClipOval(
+                    child: SizedBox(
+                      width: 200,
+                      height: 200,
+                      child: (_image!=null)? Image.file(_image,fit: BoxFit.fill,) : Image.network("https://i.imgur.com/VP08clu.jpg",fit: BoxFit.fill,),
+                    ),
+                 ), 
+              ),
+              FlatButton(
+                child: Text("Edit"),
+                onPressed: () {
+                  showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                          title: Text("Cahnge Profile Picture"),
+                          content: Text("Select from gallery or Camera"),
+                          actions: <Widget>[
+                            FlatButton(
+                              onPressed: (){
+                                getimagefromcamera();
+                                Navigator.pop(context);
+                              },
+                              child: Text("Camera"),
+                            ),
+                          ],
+                        );
+                      });
+                },
+              ),
           
           Padding(
                 padding: const EdgeInsets.fromLTRB(40.0, 8.0, 40.0, 8.0),

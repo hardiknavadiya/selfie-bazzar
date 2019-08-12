@@ -1,0 +1,135 @@
+{
+  "project_info": {
+    "project_number": "896767092903",
+    "firebase_url": "https://project-9129679899098424093.firebaseio.com",
+    "project_id": "project-9129679899098424093",
+    "storage_bucket": "project-9129679899098424093.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:896767092903:android:eda4c1f32e7909a9",
+        "android_client_info": {
+          "package_name": "com.example.selfie_bazaar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "896767092903-4k5lro1t6kvu8ongpttm1nea817it8c7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxZ-Gs4GFqaMqmIdHXbGBryDiVhvN-NlU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "896767092903-4k5lro1t6kvu8ongpttm1nea817it8c7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:896767092903:android:5d34d63389a98205",
+        "android_client_info": {
+          "package_name": "com.navadiya.flutter_app_2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "896767092903-4k5lro1t6kvu8ongpttm1nea817it8c7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxZ-Gs4GFqaMqmIdHXbGBryDiVhvN-NlU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "896767092903-4k5lro1t6kvu8ongpttm1nea817it8c7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:896767092903:android:cacf072b2b8b4f26",
+        "android_client_info": {
+          "package_name": "com.navadiya.flutter_app_facebook_3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "896767092903-4k5lro1t6kvu8ongpttm1nea817it8c7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxZ-Gs4GFqaMqmIdHXbGBryDiVhvN-NlU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "896767092903-4k5lro1t6kvu8ongpttm1nea817it8c7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:896767092903:android:096cb5dab58bca60",
+        "android_client_info": {
+          "package_name": "com.santosenoque.chatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "896767092903-m83lg2j0gt2le69n127tpq4uuimphig2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.santosenoque.chatapp",
+            "certificate_hash": "f024a9358737c115f0b769a321746c433a95528e"
+          }
+        },
+        {
+          "client_id": "896767092903-4k5lro1t6kvu8ongpttm1nea817it8c7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxZ-Gs4GFqaMqmIdHXbGBryDiVhvN-NlU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "896767092903-4k5lro1t6kvu8ongpttm1nea817it8c7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
