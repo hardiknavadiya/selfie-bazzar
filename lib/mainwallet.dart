@@ -16,18 +16,21 @@ class mainwalletstate extends State<mainwallet>
     return Scaffold(
       appBar: AppBar(
         title: Text("Main Wallat"),
-        actions: <Widget>[
-          Padding(
-            padding: const EdgeInsets.all(12.0),
-            child: Center(child: Text("Member: 2000003121",style: TextStyle(fontSize: 15),)),
-          )
-        ],
+        
       ),
       body: Table(
                 border: TableBorder.all(width: 1),
                 children: [
-                  _buildTableheading("Date,Main Wallet,Total,Status,Remart"),
-                  _buildTableRow("27/02/2018,5,5,Transfer,First purchase by 15549484848484"),
+                  _buildTableheading("Member,Date,Main Wallet,Total,Status"),
+                  _buildTableRow("888888888,27/02/2018,5,5,Transfer,"),
+                  TableRow(
+                    children:[
+                      TableCell(child: Text("dnvdhgyd"),
+
+                      )
+                    ] 
+                  ),
+                  
                   _buildTableRow("27/02/2018,5,5,Transfer,First purchase by 15549484848484"),
                   _buildTableRow("27/02/2018,5,5,Transfer,First purchase by 15549484848484"),                                    
                   _buildTableRow("27/02/2018,5,5,Transfer,First purchase by 15549484848484"),
