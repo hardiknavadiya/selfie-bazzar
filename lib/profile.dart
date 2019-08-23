@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:image_picker/image_picker.dart';
 
+import 'editprofile.dart';
+
 class profile extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -11,169 +13,104 @@ class profile extends StatefulWidget {
 }
 
 class profilestate extends State<profile> {
-  File _image;
-  Future getimagefromcamera() async {
-    var image = await ImagePicker.pickImage(source: ImageSource.camera);
 
-    setState(() {
-      _image = image;
-    });
-  }
-  Future getimagefromgallary() async {
-    var image = await ImagePicker.pickImage(source: ImageSource.gallery );
-
-    setState(() {
-      _image = image;
-    });
-  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Profile Screen"),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(30.0),
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: <Widget>[
-              CircleAvatar(
-                radius: 70,
-                 child: ClipOval(
-                    child: SizedBox(
-                      width: 200,
-                      height: 200,
-                      child: (_image!=null)? Image.file(_image,fit: BoxFit.fill,) : Image.network("https://i.imgur.com/VP08clu.jpg",fit: BoxFit.fill,),
-                    ),
-                 ), 
-              ),
-              FlatButton(
-                child: Text("Edit"),
-                onPressed: () {
-                  showDialog(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return AlertDialog(
-                          title: Text("Cahnge Profile Picture"),
-                          content: Text("Select from gallery or Camera"),
-                          actions: <Widget>[
-                            FlatButton(
-                              onPressed: (){
-                                getimagefromcamera();
-                                Navigator.pop(context);
-                              },
-                              child: Text("Camera"),
-                            ),
-                            FlatButton(
-                              onPressed: (){
-                                getimagefromgallary();
-                                Navigator.pop(context);
-                              },
-                              child: Text("Gallery"),
-                            ),
-                          ],
-                        );
-                      });
-                },
-              ),
-              Container(
-                height: 20,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: <Widget>[
-                  Card(
-                    elevation: 4,
-                    child: Container(
-                      child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Text("Name :"),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 15.0),
-                    child: Text("Hardik"),
-                  )
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: <Widget>[
-                  Card(
-                    elevation: 4,
-                    child: Container(
-                      child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Text("Email-Id :"),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 15.0),
-                    child: Text("hardiknavadiya51@gmail.com"),
-                  )
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: <Widget>[
-                  Card(
-                    elevation: 4,
-                    child: Container(
-                      child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Text("Contect No :"),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 15.0),
-                    child: Text("7878086940"),
-                  )
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: <Widget>[
-                  Card(
-                    elevation: 4,
-                    child: Container(
-                      child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Text("Address :"),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 15.0),
-                    child: Text("Surat"),
-                  )
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: <Widget>[
-                  Card(
-                    elevation: 4,
-                    child: Container(
-                      child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Text("Pincode :"),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 15.0),
-                    child: Text("395004"),
-                  )
-                ],
-              ),
-            ],
-          ),
+        appBar: AppBar(
+          title: Text("Profile Screen"),
         ),
-      ),
-    );
+        body:Stack(
+          fit: StackFit.expand,
+            
+          children: <Widget>[
+            new Image.asset(
+                'images/b1.jpg',
+                fit: BoxFit.fill,
+              ),
+              
+          Container(
+            child: Padding(
+            padding:
+                const EdgeInsets.only(top: 80, left: 10, right: 10, bottom: 80),
+            child: Card(
+              elevation: 3,
+              child: ListView(children: [
+                Padding(
+                    padding: const EdgeInsets.all(30.0),
+                    child: Center(
+                      child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: <Widget>[
+                            Card(
+                              elevation: 15,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(70)),
+                              child: CircleAvatar(
+                                radius: 70,
+                                child: ClipOval(
+                                  child: SizedBox(
+                                    width: 200,
+                                    height: 200,
+                                    child: Image.network(
+                                            "https://i.imgur.com/VP08clu.jpg",
+                                            fit: BoxFit.fill,
+                                          ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Container(
+                              height: 40,
+                            ),
+                            Container(
+                              child: Padding(
+                                padding: const EdgeInsets.all(14.0),
+                                child: Table(
+                                  children: [
+                                    _buildTableRow("Name:,hardik"),
+                                    _buildTableRow(
+                                        "Email-Id:,hardiknavadiya5@gmail.com"),
+                                    _buildTableRow("Mobile No:,7878086940"),
+                                    _buildTableRow("Address,Surat"),
+                                    _buildTableRow("Pincode,395004"),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ]),
+                    ))
+              ]),
+            ),
+        ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 590.0,bottom: 50, left: 100,right: 100),
+            child: RaisedButton(
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
+              color: Colors.blue[800],           
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (context)=> editprofile()
+                ));
+              },
+              child: Text("Edit Profile",style: TextStyle(fontSize: 20, color: Colors.white),),
+            ),
+          )
+          ]
+          )
+          );
   }
+}
+
+TableRow _buildTableRow(String listOfNames) {
+  return TableRow(
+    children: listOfNames.split(',').map((name) {
+      return Container(
+        alignment: Alignment.topLeft,
+        child: Text(name, style: TextStyle(fontSize: 18.0)),
+        padding: EdgeInsets.all(8.0),
+      );
+    }).toList(),
+  );
 }
