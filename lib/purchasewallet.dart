@@ -105,29 +105,3 @@ Widget transectionlist() {
   );
 }
 
-TableRow _buildTableRow(String listOfNames) {
-  return TableRow(
-    children: listOfNames.split(',').map((name) {
-      return Container(
-        alignment: Alignment.center,
-        child: Text(name, style: TextStyle(fontSize: 12.0)),
-        padding: EdgeInsets.all(8.0),
-      );
-    }).toList(),
-  );
-}
-
-TableRow _buildTableheading(String listOfNames) {
-  return TableRow(
-    decoration: BoxDecoration(
-      color: Colors.purpleAccent[400],
-    ),
-    children: listOfNames.split(',').map((name) {
-      return Container(
-        child: Text(name,
-            style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold)),
-        padding: EdgeInsets.all(8.0),
-      );
-    }).toList(),
-  );
-}
