@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/rendering.dart';
-import 'package:selfie_bazaar/balancewallet.dart';
+import 'package:selfie_bazaar/purchasewallet.dart';
 import 'package:selfie_bazaar/mainwallet.dart';
 import 'package:selfie_bazaar/membership.dart';
 import 'package:selfie_bazaar/profile.dart';
@@ -124,6 +124,7 @@ class dashboardstate extends State<dashboard> {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => mymember()));
                     }),
+                    slider(Icon(Icons.lock_open), "Support", () {}),
                     slider(Icon(Icons.lock_open), "Log Out", () {}),
                   ],
                 ),

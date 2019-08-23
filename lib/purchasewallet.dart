@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:selfie_bazaar/detailspage.dart';
 
 class balancew extends StatefulWidget {
   @override
@@ -28,14 +29,47 @@ class balancewstate extends State<balancew> {
           children: <Widget>[
             Column(
               children: <Widget>[
-                transectionlist(), 
-                transectionlist(),
-                transectionlist(),
-                transectionlist()
-                ],
+                cardtap(),
+                cardtap(),
+                cardtap(),
+              ],
             )
           ],
         ));
+  }
+}
+
+class cardtap extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 5,
+      child: FlatButton(
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => detailpage()));
+        },
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Text("Date: 24/02/2019"),
+                  Text("Purchase Wallet: 5000")
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text("Remark: First Purchae By 8000000000"),
+            )
+          ],
+        ),
+      ),
+    );
   }
 }
 
@@ -44,7 +78,9 @@ Widget transectionlist() {
     elevation: 5,
     child: FlatButton(
       onPressed: () {
-        print("on pressed");
+        BuildContext context;
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => detailpage()));
       },
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

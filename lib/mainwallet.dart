@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'balancewallet.dart';
+import 'purchasewallet.dart';
 class mainwallet extends StatefulWidget
 {
   @override
